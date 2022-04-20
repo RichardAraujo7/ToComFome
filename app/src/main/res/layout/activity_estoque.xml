@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EstoqueActivity">
+
+    <include
+        android:id="@+id/toolbar_estoque_activity"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <FrameLayout
+        android:id="@+id/ivImageReports"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="225dp"
+        android:maxWidth="225dp"
+        app:layout_constraintBottom_toTopOf="@id/tvInformativeStockText"
+        android:background="@drawable/img_activity_estoque"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_estoque_activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvInformativeStockText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivImageReports"
+        android:text="@string/texto_apis_relatorios"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <ProgressBar
+        android:id="@+id/progressAtualizarEstoque"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInformativeStockText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

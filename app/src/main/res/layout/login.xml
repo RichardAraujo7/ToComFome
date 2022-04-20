@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseConstraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/flPurpleBg"
+        android:layout_width="wrap_content"
+        android:layout_height="275dp"
+        android:background="@drawable/purple_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTextoInicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/telaInicial_texto_inicial"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/flPurpleBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/flPurpleBg" />
+
+    <FrameLayout
+        android:id="@+id/ivImagemEstoque"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:maxHeight="225dp"
+        android:maxWidth="225dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTextoInicial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/img_stock"
+        />
+
+    <EditText
+        android:id="@+id/eTTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Usuário"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/telaInicial_insira_usuario"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:paddingBottom="16dp"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivImagemEstoque" />
+
+    <EditText
+        android:id="@+id/eTTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/telaInicial_insira_senha"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eTTextPersonName" />
+
+    <Button
+        android:id="@+id/buttonEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:backgroundTint="@color/purple_ps"
+        android:text="@string/telaInicial_entrar"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTTextPassword" />
+
+    <Button
+        android:id="@+id/buttonSair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:backgroundTint="@color/purple_ps"
+        android:text="@string/telainicial_sair"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
