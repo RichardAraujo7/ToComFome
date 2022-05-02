@@ -1,9 +1,10 @@
-package com.example.constrastoque
+package com.example.constrastoque.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.constrastoque.R
 import kotlinx.android.synthetic.main.login.*
 
 class LoginActivity : AppCompatActivity() {

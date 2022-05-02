@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EstoqueActivity">
+    tools:context=".view.EstoqueActivity">
 
     <include
         android:id="@+id/toolbar_estoque_activity"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroItemEstoque">
+    tools:context=".view.CadastroItemEstoqueActivity">
 
     <include
         android:id="@+id/toolbar_cadastro_item_estoque_activity"

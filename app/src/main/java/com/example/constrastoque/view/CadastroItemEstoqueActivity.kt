@@ -1,11 +1,12 @@
-package com.example.constrastoque
+package com.example.constrastoque.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.example.constrastoque.R
 import kotlinx.android.synthetic.main.activity_cadastro_item_estoque.*
 
-class CadastroItemEstoque : AppCompatActivity() {
+class CadastroItemEstoqueActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_item_estoque)

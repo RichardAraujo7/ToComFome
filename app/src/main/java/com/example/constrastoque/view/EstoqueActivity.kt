@@ -1,4 +1,4 @@
-package com.example.constrastoque
+package com.example.constrastoque.view
 
 import android.content.Context
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import com.example.constrastoque.R
 import kotlinx.android.synthetic.main.activity_estoque.*
 
 import kotlinx.android.synthetic.main.activity_main.toolbar_estoque_activity
@@ -48,7 +49,7 @@ class EstoqueActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_adicionar -> {
-                val intentItemEstoque = Intent(this, CadastroItemEstoque::class.java)
+                val intentItemEstoque = Intent(this, CadastroItemEstoqueActivity::class.java)
                 startActivity(intentItemEstoque)
             }
             R.id.action_atualizar -> {
