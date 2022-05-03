@@ -2,6 +2,7 @@ package com.example.constrastoque.view
 
 import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -9,22 +10,50 @@ import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.View.GONE
+import android.webkit.RenderProcessGoneDetail
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isVisible
 import com.example.constrastoque.R
+import com.example.constrastoque.component.model.EstoqueFactory
+import com.example.constrastoque.component.view.EstoqueList
 import kotlinx.android.synthetic.main.activity_estoque.*
 
 import kotlinx.android.synthetic.main.activity_main.toolbar_estoque_activity
 
 class EstoqueActivity : AppCompatActivity() {
     private val context: Context get() = this
+    private var ivImageReports: FrameLayout? = null
+    private lateinit var estoqueLimit: EstoqueList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estoque)
         setSupportActionBar(toolbar_estoque_activity as Toolbar?)
         supportActionBar?.title = "Estoque"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        init()
+    }
+
+    private fun init() {
+        findIds()
+        initialViews()
+    }
+
+    private fun findIds() {
+        ivImageReports = findViewById(R.id.ivImageReports)
+        estoqueLimit = findViewById(R.id.rvEstoqueList)
+    }
+
+    private fun initialViews() {
+        if (ivImageReports?.isVisible == true) {
+            rvEstoqueList.visibility = GONE
+        }
+
+        initInfoList()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -64,5 +93,13 @@ class EstoqueActivity : AppCompatActivity() {
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun initInfoList() {
+        estoqueLimit.setStockList(
+            EstoqueFactory.createList(
+                context
+            )
+        )
     }
 }

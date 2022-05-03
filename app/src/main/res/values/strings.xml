@@ -38,4 +38,10 @@
     <string name="main_activity_sair">Sair</string>
     <string name="texto_apis_relatorios">Os dados dos pedidos serão informados conforme sendo recebidos por API</string>
     <string name="texto_apis_estoque">Os dados de estoque serão informados conforme sendo recebidos por API</string>
+    <string name="texto_relogio_desc">A linha de produto Montblanc 1858 é inspirada nos lendários relógios profissionais Minerva dos anos 1920 e 1930, concebidos para a utilização e exploração militar</string>
+    <string name="texto_relogio_nome_1">Relógio MontBlanc</string>
+    <string name="texto_relogio_nome_2">Relógio Casio</string>
+    <string name="texto_relogio_nome_3">Relógio Condor</string>
+    <string name="texto_relogio_nome_4">Relógio Technos</string>
+
 </resources>
