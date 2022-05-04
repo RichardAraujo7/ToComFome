@@ -4,5 +4,5 @@ class EstoqueModel (
     val image: Int,
     val name: String,
     val description: String,
-    val amount: Int
+    val amount: Int,
     )

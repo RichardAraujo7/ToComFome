@@ -10,10 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Contrastoque">
         <activity
+            android:name=".view.DetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.CadastroItemEstoqueActivity"
             android:exported="true"
-            android:parentActivityName=".view.EstoqueActivity"
-            />
+            android:parentActivityName=".view.EstoqueActivity" />
         <activity
             android:name=".view.PedidosActivity"
             android:exported="true"

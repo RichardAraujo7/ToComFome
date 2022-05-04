@@ -43,5 +43,11 @@
     <string name="texto_relogio_nome_2">Relógio Casio</string>
     <string name="texto_relogio_nome_3">Relógio Condor</string>
     <string name="texto_relogio_nome_4">Relógio Technos</string>
+    <string name="texto_tenis_nome_1">Air Force 1</string>
+    <string name="texto_tenis_nome_2">Air Max Fusion</string>
+    <string name="texto_tenis_nome_3">Air Max 95</string>
+    <string name="texto_tenis_nome_4">Air Max 97</string>
+    <string name="texto_tenis_desc">O Air Force 1 Mid 07 é tudo aquilo que você conhece bem: sobreposições impecáveis, detalhes ousados e a quantidade perfeita de brilho para que você se destaque. A boca almofadada de corte médio com fecho aderente clássico adiciona o conforto clássico do basquete, enquanto as perfurações na ponta mantêm o frescor</string>
+
 
 </resources>
