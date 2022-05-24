@@ -2,7 +2,6 @@ package com.example.constrastoque.view
 
 import android.content.Context
 import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -11,21 +10,24 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
-import android.webkit.RenderProcessGoneDetail
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import com.example.constrastoque.R
-import com.example.constrastoque.component.model.EstoqueFactory
+import com.example.constrastoque.component.adapter.EstoqueRecyclerViewAdapter
+import com.example.constrastoque.component.model.Estoque
 import com.example.constrastoque.component.view.EstoqueList
+import com.example.constrastoque.service.EstoqueService
 import kotlinx.android.synthetic.main.activity_estoque.*
 
 import kotlinx.android.synthetic.main.activity_main.toolbar_estoque_activity
+import kotlinx.android.synthetic.main.item_estoque_recycler_view_list.*
 
 class EstoqueActivity : AppCompatActivity() {
     private val context: Context get() = this
+    private var itens = listOf<Estoque>()
     private var ivImageReports: FrameLayout? = null
     private lateinit var estoqueLimit: EstoqueList
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +72,6 @@ class EstoqueActivity : AppCompatActivity() {
                     Toast.makeText(context, query, Toast.LENGTH_SHORT).show()
                     return false
                 }
-
             })
         return true
     }
@@ -96,10 +97,12 @@ class EstoqueActivity : AppCompatActivity() {
     }
 
     private fun initInfoList() {
-        estoqueLimit.setStockList(
-            EstoqueFactory.createList(
-                context
-            )
-        )
+        Thread {
+            itens = EstoqueService.getEstoque()
+            runOnUiThread {
+                estoqueLimit.setStockList(itens)
+
+            }
+        }.start()
     }
 }

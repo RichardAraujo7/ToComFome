@@ -7,7 +7,6 @@ import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import com.example.constrastoque.R
-import com.example.constrastoque.component.model.PedidosFactory
 import com.example.constrastoque.component.view.EstoqueList
 import kotlinx.android.synthetic.main.activity_pedidos.*
 
@@ -44,10 +43,10 @@ class PedidosActivity : AppCompatActivity() {
     }
 
     private fun initInfoList() {
-        pedidosList.setStockList(
-            PedidosFactory.createList(
-                context
-            )
-        )
+//        pedidosList.setStockList(
+//            PedidosFactory.createList(
+//                context
+//            )
+//        )
     }
 }

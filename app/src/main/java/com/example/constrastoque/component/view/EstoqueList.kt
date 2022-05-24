@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.constrastoque.R
 import com.example.constrastoque.component.adapter.EstoqueRecyclerViewAdapter
-import com.example.constrastoque.component.model.EstoqueModel
+import com.example.constrastoque.component.model.Estoque
 
 class EstoqueList @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private lateinit var list: MutableList<EstoqueModel>
+    private lateinit var list: List<Estoque>
     private var rvStockLimit: RecyclerView
     private lateinit var adapter: EstoqueRecyclerViewAdapter
 
@@ -38,7 +38,7 @@ class EstoqueList @JvmOverloads constructor(
         rvStockLimit.layoutManager = layoutManager
     }
 
-    fun setStockList(list: MutableList<EstoqueModel>) {
+    fun setStockList(list: List<Estoque>) {
         this.list = list
         initValues()
     }
