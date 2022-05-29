@@ -1,11 +1,11 @@
-package com.example.constrastoque.service
+package com.example.constrastoque.common
 
 import android.content.SharedPreferences
+import com.example.constrastoque.service.ConstrastoqueApplication
 
 object Prefs {
-    val PREF_ID = "LMS"
+    val PREF_ID = "CONSTR"
 
-    // retorna o armazém de preferências PREF_ID
     private fun prefs(): SharedPreferences {
         val context = ConstrastoqueApplication.getInstance().applicationContext
         return context.getSharedPreferences(PREF_ID, 0)
