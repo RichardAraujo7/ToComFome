@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import com.example.constrastoque.R
+import com.example.constrastoque.service.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.toolbar_estoque_activity
 
@@ -26,13 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         val args = intent.extras
         val usuario = args?.getString("nome")
+        val usuarioSalvo = Prefs.getString("nome")
         val intentEstoque = Intent(this, EstoqueActivity::class.java)
         val intentPedidos = Intent(this, PedidosActivity::class.java)
-        textoTelaInicial.text = "Bem vindo $usuario"
+        textoTelaInicial.text = "Bem vindo $usuarioSalvo"
+
         botaoSair.setOnClickListener { finish() }
-        if (usuario == null) {
-            textoTelaInicial.visibility = View.GONE
-        }
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.abrir, R.string.fechar)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()

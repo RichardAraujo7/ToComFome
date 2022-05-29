@@ -38,7 +38,6 @@ class EstoqueActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_estoque_activity as Toolbar?)
         supportActionBar?.title = "Estoque"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         init()
     }
 
@@ -100,7 +99,6 @@ class EstoqueActivity : AppCompatActivity() {
         adapter = EstoqueRecyclerViewAdapter(itens) { index ->
             deleteItem(index)
         }
-
 
         rvEstoqueAdapter.adapter = adapter
         rvEstoqueAdapter.isNestedScrollingEnabled = false
