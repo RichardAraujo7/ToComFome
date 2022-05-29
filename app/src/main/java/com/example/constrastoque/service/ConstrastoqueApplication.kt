@@ -3,14 +3,13 @@ package com.example.constrastoque.service
 import android.app.Application
 import java.lang.IllegalStateException
 
-class ConstrastoqueApplication: Application() {// chamado quando android iniciar o processo da aplicação
+class ConstrastoqueApplication: Application() {
 override fun onCreate() {
     super.onCreate()
     appInstance = this
 }
 
     companion object {
-        // singleton
         private var appInstance: ConstrastoqueApplication?  = null
         fun getInstance(): ConstrastoqueApplication {
             if (appInstance == null) {
@@ -20,7 +19,6 @@ override fun onCreate() {
         }
     }
 
-    // chamado quando android terminar processo da aplicação
     override fun onTerminate() {
         super.onTerminate()
     }

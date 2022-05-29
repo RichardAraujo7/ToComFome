@@ -30,12 +30,11 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/acivStockImage"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/acivStockImage"
             app:layout_constraintEnd_toEndOf="@id/acivStockImage"
             app:layout_constraintStart_toStartOf="@id/acivStockImage"
-            app:layout_constraintBottom_toBottomOf="@id/acivStockImage"
-            android:visibility="invisible"
-            />
+            app:layout_constraintTop_toTopOf="@id/acivStockImage" />
 
         <TextView
             android:id="@+id/tvStockTitle"
@@ -51,6 +50,20 @@
             app:layout_constraintEnd_toStartOf="@+id/tvStockAmount"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@+id/acivStockImage"
+            app:layout_constraintTop_toTopOf="@+id/acivStockImage" />
+
+        <ImageView
+            android:id="@+id/ivEditItem"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="6dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_menu_edit"
+            app:layout_constraintBottom_toTopOf="@+id/tvStockDescription"
+            app:layout_constraintEnd_toStartOf="@+id/tvStockAmount"
             app:layout_constraintTop_toTopOf="@+id/acivStockImage" />
 
         <TextView
@@ -87,16 +100,31 @@
 
         <Button
             android:id="@+id/btnDetail"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/white"
             android:text="@string/model_type_detail_button_text"
             android:textColor="@color/purple_ps"
-            android:textSize="10sp"
+            android:textSize="@dimen/textSize10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tvStockDescription"
+            app:layout_constraintEnd_toStartOf="@id/btnExclude"
             app:layout_constraintStart_toStartOf="@id/tvStockDescription"
+            app:layout_constraintTop_toBottomOf="@id/tvStockDescription" />
+
+        <Button
+            android:id="@+id/btnExclude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/white"
+            android:text="Excluir"
+            android:textColor="#FF0000"
+            android:textSize="@dimen/textSize10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnDetail"
             app:layout_constraintTop_toBottomOf="@id/tvStockDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

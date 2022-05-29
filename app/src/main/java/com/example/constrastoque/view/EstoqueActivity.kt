@@ -11,25 +11,27 @@ import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
 import android.widget.FrameLayout
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.constrastoque.R
 import com.example.constrastoque.component.adapter.EstoqueRecyclerViewAdapter
 import com.example.constrastoque.component.model.Estoque
-import com.example.constrastoque.component.view.EstoqueList
 import com.example.constrastoque.service.EstoqueService
 import kotlinx.android.synthetic.main.activity_estoque.*
 
 import kotlinx.android.synthetic.main.activity_main.toolbar_estoque_activity
-import kotlinx.android.synthetic.main.item_estoque_recycler_view_list.*
+
 
 class EstoqueActivity : AppCompatActivity() {
-    private val context: Context get() = this
-    private var itens = listOf<Estoque>()
+    var context: Context? = null
+    lateinit var itens: List<Estoque>
+    var estoque: Estoque? = null
+    private lateinit var list: List<Estoque>
+    private lateinit var adapter: EstoqueRecyclerViewAdapter
     private var ivImageReports: FrameLayout? = null
-    private lateinit var estoqueLimit: EstoqueList
+    private lateinit var estoqueAdapter: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estoque)
@@ -47,12 +49,12 @@ class EstoqueActivity : AppCompatActivity() {
 
     private fun findIds() {
         ivImageReports = findViewById(R.id.ivImageReports)
-        estoqueLimit = findViewById(R.id.rvEstoqueList)
+        estoqueAdapter = findViewById(R.id.rvEstoqueAdapter)
     }
 
     private fun initialViews() {
         if (ivImageReports?.isVisible == true) {
-            rvEstoqueList.visibility = GONE
+            rvEstoqueAdapter.visibility = GONE
         }
 
         initInfoList()
@@ -60,19 +62,7 @@ class EstoqueActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        (menu?.findItem(R.id.action_buscar)?.actionView as SearchView?)?.setOnQueryTextListener(
-            object : SearchView.OnQueryTextListener {
 
-                override fun onQueryTextChange(newText: String): Boolean {
-                    Toast.makeText(context, newText, Toast.LENGTH_SHORT).show()
-                    return true
-                }
-
-                override fun onQueryTextSubmit(query: String): Boolean {
-                    Toast.makeText(context, query, Toast.LENGTH_SHORT).show()
-                    return false
-                }
-            })
         return true
     }
 
@@ -96,12 +86,43 @@ class EstoqueActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun setStockList(list: List<Estoque>) {
+        this.list = list
+        initAdapterValues()
+    }
+
+    private fun initAdapterValues() {
+        val layoutManager = LinearLayoutManager(
+            context,
+            LinearLayoutManager.VERTICAL, false
+        )
+
+        adapter = EstoqueRecyclerViewAdapter(itens) { index ->
+            deleteItem(index)
+        }
+
+
+        rvEstoqueAdapter.adapter = adapter
+        rvEstoqueAdapter.isNestedScrollingEnabled = false
+        rvEstoqueAdapter.setHasFixedSize(true)
+        rvEstoqueAdapter.layoutManager = layoutManager
+    }
+
     private fun initInfoList() {
         Thread {
             itens = EstoqueService.getEstoque()
             runOnUiThread {
-                estoqueLimit.setStockList(itens)
+                setStockList(itens)
+            }
+        }.start()
+    }
 
+    private fun deleteItem(index: Int) {
+        Thread {
+            EstoqueService.delete(index)
+            runOnUiThread {
+                adapter.notifyItemRemoved(index)
+                initInfoList()
             }
         }.start()
     }

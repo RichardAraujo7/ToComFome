@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.constrastoque.R
 import com.example.constrastoque.component.adapter.EstoqueRecyclerViewAdapter
 import com.example.constrastoque.component.model.Estoque
+import com.example.constrastoque.service.EstoqueService
 
 class EstoqueList @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -30,7 +31,7 @@ class EstoqueList @JvmOverloads constructor(
         val layoutManager = LinearLayoutManager(context,
             LinearLayoutManager.VERTICAL, false)
 
-        adapter = EstoqueRecyclerViewAdapter(list)
+
         rvStockLimit.adapter = adapter
 
         rvStockLimit.isNestedScrollingEnabled = false

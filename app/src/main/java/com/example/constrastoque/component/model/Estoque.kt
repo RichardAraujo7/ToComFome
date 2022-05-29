@@ -22,9 +22,4 @@ open class Estoque : Serializable {
     fun toJson(): String {
         return GsonBuilder().create().toJson(this)
     }
-
-    fun parseId(idFinal: Int): Int {
-        id = idFinal
-        return id
-    }
 }

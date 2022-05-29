@@ -10,18 +10,16 @@ import java.io.IOException
 object HttpHelper {
     private val TAG = "HTTP_LMSApp"
     private val LOG_ON = true
-    val JSON = "application/json; charset=utf-8"?.toMediaTypeOrNull()
+    val JSON = "application/json; charset=utf-8".toMediaTypeOrNull()
 
     var client = OkHttpClient()
 
-    // GET
     fun get(url:String): String {
         Log.d(TAG, "HttpHelper.get: $url")
         val request = Request.Builder().url(url).get().build()
         return getJson(request)
     }
 
-    // POST JSON
     fun post(url: String, json: String): String {
         Log.d(TAG, "HttpHelper.post: $url > $json")
         val body = RequestBody.create(JSON, json)
@@ -29,15 +27,12 @@ object HttpHelper {
         return getJson(request)
     }
 
-    // DELETE
     fun delete(url: String): String {
         Log.d(TAG, "HttpHelper.delete: $url")
         val request = Request.Builder().url(url).delete().build()
         return getJson(request)
     }
 
-
-    // Lê resposta em formato JSON
     private fun getJson(request: Request): String {
         val response = client.newCall(request).execute()
         val body = response.body;

@@ -66,14 +66,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ivImageReports" />
 
-                <com.example.constrastoque.component.view.EstoqueList
-                    android:id="@+id/rvEstoqueList"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEstoqueAdapter"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/clConstraintContent"/>
+
 
                 <ProgressBar
                     android:id="@+id/progressAtualizarEstoque"
@@ -84,7 +85,7 @@
                     android:layout_marginBottom="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rvEstoqueList" />
+                    app:layout_constraintTop_toBottomOf="@id/rvEstoqueAdapter" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

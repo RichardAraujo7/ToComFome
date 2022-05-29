@@ -1,5 +1,6 @@
 package com.example.constrastoque.service
 
+import android.content.Context
 import android.util.Log
 import com.example.constrastoque.component.model.Estoque
 import com.google.gson.Gson
@@ -7,32 +8,64 @@ import com.google.gson.reflect.TypeToken
 import java.net.URL
 
 object EstoqueService {
-    val host = "http://192.168.0.13:5002"
-    val TAG = "ConstrastoqueAPI"
+    const val host = "http://192.168.0.10:5002"
+    const val TAG = "ConstrastoqueAPI"
 
-    fun getEstoque (): List<Estoque> {
-        return try {
+    fun getEstoque(): List<Estoque> {
+        var estoque = ArrayList<Estoque>()
+        if (AndroidUtils.isInternetDisponivel()) {
             val url = "$host/estoque"
             val json = URL(url).readText()
-            Log.d(TAG, json)
-            parserJson<List<Estoque>>(json)
-        } catch (ex: Exception) {
-            DatabaseManager.getEstoqueDAO().findAll()
+            estoque = parserJson(json)
+            for (items in estoque) {
+                saveOffline(items)
+            }
+            return estoque
+        } else  {
+            val dao = DatabaseManager.getEstoqueDAO()
+            dao.findAll()
+            return estoque
         }
     }
 
     fun saveEstoque(estoque: Estoque): Response {
-        try {
-            val json = HttpHelper.post("$host/estoque", estoque.toJson())
-            return parserJson(json)
+        return try {
+            val json = HttpHelper.post("$host/estoque/adicionarItemEstoque", estoque.toJson())
+            parserJson(json)
         } catch (ex: Exception) {
             DatabaseManager.getEstoqueDAO().insert(estoque)
-            return Response("ok", "ok")
+            Response("ok", "ok")
+        }
+    }
+
+    fun saveOffline(paises: Estoque): Boolean {
+        val dao = DatabaseManager.getEstoqueDAO()
+        if (!existeEstoque(paises)) {
+            dao.insert(paises)
+        }
+        return true
+    }
+
+    fun existeEstoque(estoque: Estoque): Boolean {
+        val dao = DatabaseManager.getEstoqueDAO()
+        return dao.getById(estoque.id) != null
+    }
+
+
+    fun delete(index: Int): Response {
+        try {
+            val url = "$host/estoque/$index"
+            val json = HttpHelper.delete(url)
+            return parserJson(json)
+        } catch (ex: Exception) {
+            val dao = DatabaseManager.getEstoqueDAO()
+            dao.delete(dao.getById(index))
+            return Response(status = "OK", msg = "Dados salvos localmente")
         }
     }
 
     private inline fun <reified T> parserJson(json: String): T {
-        val type = object : TypeToken<T>(){}.type
+        val type = object : TypeToken<T>() {}.type
         return Gson().fromJson<T>(json, type)
     }
 }

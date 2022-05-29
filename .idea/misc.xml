@@ -8,6 +8,7 @@
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable-v24/cursor_color.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.378125" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable/ic_baseline_add.xml" value="0.2203125" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable/ic_baseline_signal_cellular_4_bar_24.xml" value="0.3828125" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/drawable/ic_menu_camera.xml" value="0.22135416666666666" />
@@ -17,7 +18,7 @@
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_cadastro_item_estoque.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_detalhes.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_estoque.xml" value="0.31521739130434784" />
+        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_estoque.xml" value="0.4562540505508749" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_main2.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/activity_pedidos.xml" value="0.31521739130434784" />
@@ -27,7 +28,7 @@
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/fragment_first.xml" value="0.23596014492753623" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/fragment_gallery.xml" value="0.3283514492753623" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/fragment_slideshow.xml" value="0.3283514492753623" />
-        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/item_estoque_model_type.xml" value="0.6723809523809524" />
+        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/item_estoque_model_type.xml" value="2.4654088050314464" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/item_estoque_recycler_view_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/layout/nav_header.xml" value="0.3283514492753623" />
@@ -38,9 +39,10 @@
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/menu/menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/menu/menu_configurar.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/menu/menu_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/menu/menu_main.xml" value="0.67" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/menu/nav_drawer_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
+        <entry key="..\:/Users/WIN/Desktop/ESTUDOS/FACUL/SEMESTRE_3/sads/app/src/main/res/xml/network_security_config.xml" value="0.18645833333333334" />
       </map>
     </option>
   </component>

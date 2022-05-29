@@ -7,10 +7,10 @@ object DatabaseManager {
     init {
         val appContext = ConstrastoqueApplication.getInstance().applicationContext
         dbInstance = Room.databaseBuilder(
-            appContext, // contexto global
-            ConstrastoqueDatabase::class.java, // Referência da classe do banco
-            "lmsss.sqlite" // nome do arquivo do banco
-        ).build()
+            appContext,
+            ConstrastoqueDatabase::class.java,
+            "constrastoque.sqlite"
+        ).allowMainThreadQueries().build()
     }
 
     fun getEstoqueDAO(): EstoqueDAO {
