@@ -21,6 +21,10 @@
             android:exported="true"
             android:parentActivityName=".view.EstoqueActivity" />
         <activity
+            android:name=".view.EditItemEstoqueActivity"
+            android:exported="true"
+            android:parentActivityName=".view.EstoqueActivity" />
+        <activity
             android:name=".view.PedidosActivity"
             android:exported="true"
             android:label="@string/title_activity_pedidos"
@@ -36,6 +40,7 @@
             android:name=".view.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
+            android:launchMode="singleTask"
             android:parentActivityName=".view.MainActivity"
             android:theme="@style/Theme.Contrastoque.NoActionBar" />
         <activity

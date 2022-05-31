@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         val args = intent.extras
         val usuario = args?.getString("nome")
-        val usuarioSalvo = Prefs.getString("nome")
+        val usuarioo: String = usuario.toString()
+        Prefs.setString("lembrarNome", usuarioo)
+        val usuarioSalvo = Prefs.getString("lembrarNome")
         val intentEstoque = Intent(this, EstoqueActivity::class.java)
         val intentPedidos = Intent(this, PedidosActivity::class.java)
         textoTelaInicial.text = "Bem vindo $usuarioSalvo"

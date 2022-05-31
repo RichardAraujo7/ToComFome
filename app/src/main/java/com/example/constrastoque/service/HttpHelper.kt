@@ -27,6 +27,13 @@ object HttpHelper {
         return getJson(request)
     }
 
+    fun put(url: String, json: String): String {
+        Log.d(TAG, "HttpHelper.put: $url > $json")
+        val body = RequestBody.create(JSON, json)
+        val request = Request.Builder().url(url).put(body).build()
+        return getJson(request)
+    }
+
     fun delete(url: String): String {
         Log.d(TAG, "HttpHelper.delete: $url")
         val request = Request.Builder().url(url).delete().build()

@@ -38,6 +38,16 @@ object EstoqueService {
         }
     }
 
+    fun update(estoque: Estoque, index: Int): Response {
+        return try  {
+            val json = HttpHelper.put("$host/estoque/$index", estoque.toJson())
+            parserJson(json)
+        } catch (ex: Exception) {
+            DatabaseManager.getEstoqueDAO().insert(estoque)
+            Response("ok", "ok")
+        }
+    }
+
     fun saveOffline(paises: Estoque): Boolean {
         val dao = DatabaseManager.getEstoqueDAO()
         if (!existeEstoque(paises)) {

@@ -18,7 +18,7 @@ import com.example.constrastoque.component.model.Estoque
 import com.example.constrastoque.view.DetailsActivity
 
 class EstoqueRecyclerViewAdapter(val list: List<Estoque>,
-                                 val onClickDelete: (Int) -> Unit) :
+                                 val onClickDelete: (Int) -> Unit, val onClickEdit: (Int) -> Unit) :
     RecyclerView.Adapter<EstoqueRecyclerViewAdapter.ExtraViewHolder>() {
 
     inner class ExtraViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -69,6 +69,8 @@ class EstoqueRecyclerViewAdapter(val list: List<Estoque>,
             }
 
             btnDelete.setOnClickListener { onClickDelete(index) }
+
+            ivEditItem.setOnClickListener { onClickEdit(index) }
         }
     }
 

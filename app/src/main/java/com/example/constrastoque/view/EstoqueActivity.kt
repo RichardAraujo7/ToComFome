@@ -41,6 +41,11 @@ class EstoqueActivity : AppCompatActivity() {
         init()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initInfoList()
+    }
+
     private fun init() {
         findIds()
         initialViews()
@@ -96,9 +101,16 @@ class EstoqueActivity : AppCompatActivity() {
             LinearLayoutManager.VERTICAL, false
         )
 
-        adapter = EstoqueRecyclerViewAdapter(itens) { index ->
-            deleteItem(index)
-        }
+        adapter = EstoqueRecyclerViewAdapter(itens,
+            { index -> deleteItem(index) },
+            { index ->
+                val intentItemEstoque = Intent(this, EditItemEstoqueActivity::class.java)
+                val params = Bundle()
+                params.putInt("index", index)
+                intentItemEstoque.putExtras(params)
+                startActivity(intentItemEstoque)
+            }
+        )
 
         rvEstoqueAdapter.adapter = adapter
         rvEstoqueAdapter.isNestedScrollingEnabled = false
