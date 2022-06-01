@@ -15,6 +15,7 @@
         android:id="@+id/etNomeItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxLines="1"
         android:layout_marginHorizontal="16dp"
         android:hint="Nome do item"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
     <EditText
         android:id="@+id/etUrlImagem"
         android:layout_width="match_parent"
+        android:maxLines="1"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:hint="URL da Imagem"
@@ -37,6 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:hint="Quantidade de itens"
+        android:inputType="number"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUrlImagem" />
@@ -46,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:maxLines="1"
         android:hint="Descrição do Produto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

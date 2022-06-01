@@ -30,10 +30,10 @@ class PedidosActivity : AppCompatActivity() {
     }
 
     private fun initialViews() {
-        if (rvPedidosList?.isVisible == true) {
-            ivImageReports.visibility = View.GONE
-            tvInformativeRequestsText.visibility = View.GONE
-        }
+//        if (rvPedidosList?.isVisible == true) {
+//            ivImageReports.visibility = View.GONE
+//            tvInformativeRequestsText.visibility = View.GONE
+//        }
 
         initInfoList()
     }
