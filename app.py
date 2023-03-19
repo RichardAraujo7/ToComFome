@@ -84,10 +84,10 @@ def deleta_item_estoque(id_estoque):
 @app.route('/reseta', methods=['POST'])
 def reseta():
     database = {}
-    database['PEDIDOS'] = [{"id": 0, "imagem": "www.google.com", "titulo": "Relogio BIC", "quantidade": 28, "descricao": "Preto, feito em 2008"}, {
-        "id": 1, "imagem": "www.globo.com", "titulo": "Relogio DOC", "quantidade": 22, "descricao": "Vermelho, feito em 2008"}]
-    database['ESTOQUE'] = [{"id": 0, "imagem": "www.google.com", "titulo": "Relogio BIC", "quantidade": 28, "descricao": "Preto, feito em 2008"}, {
-        "id": 1, "imagem": "www.globo.com", "titulo": "Relogio DOC", "quantidade": 22, "descricao": "Vermelho, feito em 2008"}]
+    database['PEDIDOS'] = [{"id": 0, "imagem": "http://assets.stickpng.com/images/580b585b2edbce24c47b27bb.png", "titulo": "Relogio BIC", "quantidade": 28, "descricao": "Preto, feito em 2008"}, {
+    "id": 1, "imagem": "http://assets.stickpng.com/images/580b585b2edbce24c47b27bb.png", "titulo": "Relogio DOC", "quantidade": 22, "descricao": "Vermelho, feito em 2008"}]
+    database['ESTOQUE'] = [{"id": 0, "imagem": "http://assets.stickpng.com/images/580b585b2edbce24c47b27bb.png", "titulo": "Relogio BIC", "quantidade": 28, "descricao": "Preto, feito em 2008"}, {
+    "id": 1, "imagem": "https://i.ibb.co/S6pvHwg/relogio-icon-1.png", "titulo": "Relogio DOC", "quantidade": 22, "descricao": "Vermelho, feito em 2008"}]
 
 
 if __name__ == '__main__':
