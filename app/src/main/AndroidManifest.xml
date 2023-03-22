@@ -1,50 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.constrastoque">
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.example.tocomfome">
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name="com.example.tocomfome.service.ToComFomeApplication"
         android:allowBackup="true"
-        android:name=".service.ConstrastoqueApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Contrastoque">
+        android:theme="@style/Theme.ToComFome"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.DetailsActivity"
+            android:name="com.example.tocomfome.view.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.tocomfome.view.DetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".view.CadastroItemEstoqueActivity"
+            android:name="com.example.tocomfome.view.CadastroItemEstoqueActivity"
             android:exported="true"
-            android:parentActivityName=".view.EstoqueActivity" />
+            android:parentActivityName="com.example.tocomfome.view.EstoqueActivity" />
         <activity
-            android:name=".view.EditItemEstoqueActivity"
+            android:name="com.example.tocomfome.view.EditItemEstoqueActivity"
             android:exported="true"
-            android:parentActivityName=".view.EstoqueActivity" />
+            android:parentActivityName="com.example.tocomfome.view.EstoqueActivity" />
         <activity
-            android:name=".view.PedidosActivity"
+            android:name="com.example.tocomfome.view.PedidosActivity"
             android:exported="true"
             android:label="@string/title_activity_pedidos"
-            android:parentActivityName=".view.MainActivity"
-            android:theme="@style/Theme.Contrastoque.NoActionBar" />
+            android:parentActivityName="com.example.tocomfome.view.MainActivity"
+            android:theme="@style/Theme.ToComFome.NoActionBar" />
         <activity
-            android:name=".view.EstoqueActivity"
+            android:name="com.example.tocomfome.view.EstoqueActivity"
             android:exported="true"
             android:label="@string/title_activity_estoque"
-            android:parentActivityName=".view.MainActivity"
-            android:theme="@style/Theme.Contrastoque.NoActionBar" />
+            android:parentActivityName="com.example.tocomfome.view.MainActivity"
+            android:theme="@style/Theme.ToComFome.NoActionBar" />
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.example.tocomfome.view.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
             android:launchMode="singleTask"
-            android:parentActivityName=".view.MainActivity"
-            android:theme="@style/Theme.Contrastoque.NoActionBar" />
+            android:parentActivityName="com.example.tocomfome.view.MainActivity"
+            android:theme="@style/Theme.ToComFome.NoActionBar" />
         <activity
-            android:name=".view.LoginActivity"
+            android:name="com.example.tocomfome.view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

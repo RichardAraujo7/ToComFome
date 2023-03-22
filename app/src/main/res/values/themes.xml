@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Contrastoque" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.ToComFome" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,12 +14,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="AppTheme.Toolbar" parent="Theme.Contrastoque">
+    <style name="AppTheme.Toolbar" parent="Theme.ToComFome">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Contrastoque.NoActionBar">
+    <style name="Theme.ToComFome.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:parentTag="com.example.constrastoque.view.EstoqueActivity">
+    tools:parentTag="com.example.tocomfome.view.EstoqueActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEelList"

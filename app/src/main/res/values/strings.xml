@@ -1,13 +1,17 @@
 <resources>
-    <string name="app_name">Constrastoque</string>
+    <string name="app_name">To Com Fome</string>
     <string name="faca_seu_login">Faça seu login</string>
     <string name="telaInicial_usuario">Usuário</string>
     <string name="telaInicial_insira_usuario">Usuário da empresa</string>
     <string name="telaInicial_senha">Senha</string>
     <string name="telaInicial_insira_senha">Senha</string>
     <string name="telaInicial_entrar">Entrar</string>
+    <string name="telainicial_cadastrar">Cadastrar</string>
     <string name="telainicial_sair">Sair</string>
-    <string name="telaInicial_texto_inicial">CONTROSTOQUE</string>
+    <string name="telaInicial_texto_inicial">Tô Com Fome</string>
+    <string name="telaRegistro_texto_inicial">Cadastro</string>
+    <string name="telaRegistro_texto_botao">Cadastrar</string>
+    <string name="telaRegistro_texto_botaoVoltar">Entrar no app</string>
     <string name="action_buscar">Buscar</string>
     <string name="action_atualizar">Atualizar</string>
     <string name="action_adicionar">Adicionar</string>

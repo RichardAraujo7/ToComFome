@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="180dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="@string/telaInicial_texto_inicial"
+        android:text="@string/telaRegistro_texto_inicial"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@id/flPurpleBg"
@@ -32,18 +32,17 @@
         android:id="@+id/ivImagemEstoque"
         android:layout_width="225dp"
         android:layout_height="225dp"
-        android:scaleType="fitCenter"
         android:adjustViewBounds="true"
-        android:maxHeight="225dp"
-        android:maxWidth="225dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTextoInicial"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/easteregg"
-        />
+        android:maxWidth="225dp"
+        android:maxHeight="225dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTextoInicial" />
 
     <EditText
-        android:id="@+id/eTTextPersonName"
+        android:id="@+id/eTTextPersonNameRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
@@ -61,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivImagemEstoque" />
 
     <EditText
-        android:id="@+id/eTTextPassword"
+        android:id="@+id/eTTextPasswordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
@@ -75,10 +74,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/eTTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@id/eTTextPersonNameRegister" />
 
     <ProgressBar
-        android:id="@+id/progressAtualizaLogin"
+        android:id="@+id/progressAtualizaCadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -86,44 +85,32 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/eTTextPassword" />
+        app:layout_constraintTop_toBottomOf="@id/eTTextPasswordRegister" />
 
     <Button
-        android:id="@+id/buttonEntrar"
+        android:id="@+id/buttonRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
-        android:backgroundTint="@color/purple_ps"
-        android:text="@string/telaInicial_entrar"
-        android:fontFamily="@font/poppins_medium"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/purple_ps"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/telaRegistro_texto_botao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressAtualizaLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/progressAtualizaCadastro" />
 
     <Button
-        android:id="@+id/buttonCadastrar"
+        android:id="@+id/buttonVoltarLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
         android:backgroundTint="@color/purple_ps"
-        android:text="@string/telainicial_cadastrar"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/telaRegistro_texto_botaoVoltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
-
-    <Button
-        android:id="@+id/buttonSair"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:backgroundTint="@color/purple_ps"
-        android:text="@string/telainicial_sair"
-        android:fontFamily="@font/poppins_medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCadastrar" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegistrar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
